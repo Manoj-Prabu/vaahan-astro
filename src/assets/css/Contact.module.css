@@ -1,0 +1,28 @@
+.mailInputs {
+    background: transparent;
+    border: 1px solid #595959;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    color: #eba9ff;
+}
+
+.submitBtn {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-right: 5px;
+    padding: 5px 10px;
+    color: white;
+    background: linear-gradient(170deg, rgb(250, 0, 250), rgb(0, 0, 255));
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submitBtn:disabled {
+    cursor: unset;
+    background: transparent;
+    color: #595959;
+    border: 1px solid #595959;
+}

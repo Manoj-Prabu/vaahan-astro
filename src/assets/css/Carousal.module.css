@@ -1,0 +1,219 @@
+/* Slide Show Style */
+.slideshowContainer {
+	position: relative;
+	margin: auto;
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+/* @keyframes fade {
+	from {
+		clip-path: inset(0 0% 0 0);
+	}
+
+	to {
+		clip-path: inset(0 100% 0 0);
+	}
+} */
+
+@keyframes fade {
+	from {
+		opacity: .4
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
+.mySlides::before {
+	content: "";
+	/* z-index: 1; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #202125;
+	background: -moz-linear-gradient(90deg, #202125 0, rgba(32, 33, 37, .6) 40%, rgba(32, 33, 37, 0) 60%, rgba(32, 33, 37, 0) 80%, #202125 100%);
+	background: -webkit-linear-gradient(90deg, #202125 0, rgba(32, 33, 37, .6) 40%, rgba(32, 33, 37, 0) 60%, rgba(32, 33, 37, 0) 80%, #202125 100%);
+	background: linear-gradient(90deg, #202125 0, rgba(32, 33, 37, .6) 40%, rgba(32, 33, 37, 0) 60%, rgba(32, 33, 37, 0) 80%, #202125 100%);
+}
+
+.mySlides img {
+	width: 100%;
+	vertical-align: middle;
+	max-height: 90vh;
+	object-fit: cover;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	user-select: none;
+}
+
+.prev {
+	border-radius: 0 3px 3px 0;
+}
+
+.next {
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+	/* background-color: rgba(0, 0, 0, 0.8); */
+	background: linear-gradient(170deg, rgb(250, 0, 250), rgb(0, 0, 255));
+}
+
+.slideDot {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.dot {
+	cursor: pointer;
+	height: 5px;
+	width: 28px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 3px;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+	background-color: #717171;
+}
+
+.imageText {
+	position: absolute;
+	bottom: 30px;
+	left: 2%;
+	right: 40%;
+}
+
+/* Old code */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.slideset {
+		height: 30vh;
+	}
+
+	.slideset img {
+		height: 30vh;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.slideset {
+		height: 40vh;
+	}
+
+	.slideset img {
+		height: 40vh;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.slideset {
+		height: 50vh;
+	}
+
+	.slideset img {
+		height: 50vh;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.slideset {
+		height: 60vh;
+	}
+
+	.slideset img {
+		height: 60vh;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.slideset {
+		height: 75vh;
+	}
+
+	.slideset img {
+		height: 75vh;
+	}
+}
+
+.slideset img {
+	width: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.slideset>img {
+	position: absolute;
+	animation: 20s autoplay infinite ease-in-out
+}
+
+@keyframes autoplay {
+	0% {
+		left: 100%
+	}
+
+	4% {
+		left: 0%
+	}
+
+	20% {
+		left: 0%
+	}
+
+	24% {
+		left: -100%
+	}
+
+	100% {
+		left: -100%
+	}
+}
+
+.slideset>img:nth-child(1) {
+	animation-delay: 16s
+}
+
+.slideset>img:nth-child(2) {
+	animation-delay: 12s
+}
+
+.slideset>img:nth-child(3) {
+	animation-delay: 8s
+}
+
+.slideset>img:nth-child(4) {
+	animation-delay: 4s
+}
+
+.slideset>img:nth-child(5) {
+	animation-delay: 0s
+}
